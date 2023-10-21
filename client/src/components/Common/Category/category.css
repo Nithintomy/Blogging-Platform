@@ -1,0 +1,11 @@
+.category{
+    font-size: 0.7rem;
+    background: linear-gradient(to right,rgb(158, 128, 158),rgb(125, 125, 236));
+    color: antiquewhite;
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    text-transform: capitalize;
+    width: fit-content;
+    margin-bottom: 20px;
+   
+}

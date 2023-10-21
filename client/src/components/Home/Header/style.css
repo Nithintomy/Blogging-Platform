@@ -1,0 +1,24 @@
+.home-title{
+    text-align: center;
+    
+}
+.home-title h1{
+    color: blueviolet;
+    font-size: 2rem;
+}
+
+.home-title h2{
+    font-size: 2rem;
+    color: rgb(68, 68, 119);
+    margin-bottom: 1rem;
+}
+
+.home-title h1 span{
+    color: cadetblue;
+}
+
+.home-title p{
+    font-size: 1rem;
+    color: rgb(160, 158, 156);
+    font-weight: 700;
+}

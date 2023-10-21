@@ -1,0 +1,39 @@
+.blog{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.back-button{
+    text-decoration: none;
+    font-size: 1rem;
+    color: blueviolet;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    display: block;
+    margin-top: 10px;
+}
+.blog header{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.blog-date{
+    font-size: 0.8rem;
+    color: black;
+    font-weight: 600;
+
+}
+
+.blog-category{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+
+.blog-desc{
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}

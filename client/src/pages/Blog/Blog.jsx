@@ -6,7 +6,8 @@ import './Comments.css'
 import './Spinner.css'
 import CommentForm from '../../components/Home/commentForm/CommentForm';
 import axios from 'axios';
-import { SpinnerInfinity } from 'spinners-react';
+import { SpinnerRoundOutlined } from 'spinners-react';
+import { ToastContainer } from 'react-toastify';
 
 
 function formatDate(date) {
@@ -46,19 +47,17 @@ function Blog() {
 
   }, [id]);
 
-  const handleCommentSubmit = () => {
-    alert('Your comment has been submitted');
-  }
 
   const Date = blog ? formatDate(blog.createdAt) : ''; 
 
   return (
     <div>
+      <ToastContainer/>
       <Link className='back-button' to='/'><span>&#8592;</span>Back</Link>
 
       {loading ? ( 
         <div className="spinner-container">
-       <SpinnerInfinity size={400} thickness={100} speed={100} color="#36ad47" secondaryColor="rgba(0, 0, 0, 0.44)" />
+       <SpinnerRoundOutlined size={200} thickness={100} speed={100} color="#36ad47" secondarycolor="rgba(0, 0, 0, 0.44)" />
        </div>
       ) : blog ? (
         <div className='blog'>
@@ -70,9 +69,9 @@ function Blog() {
             <Category category={blog.category} />
           </div>
           <p className='blog-desc'>{blog.content}</p>
-          <CommentForm onCommentSubmit={handleCommentSubmit} blogId={id} />
+          <CommentForm blogId={id} updateComments={setComments}/>
 
-          <div className="comments">
+          <div className="comments" >
             <h2>Comments</h2>
             {comments.length > 0 ?(
             <ul>

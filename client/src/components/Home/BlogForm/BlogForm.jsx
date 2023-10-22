@@ -1,33 +1,63 @@
 import React, { useState } from 'react'
 import './Form.css'
 import axios from 'axios'
+import { toast, ToastContainer } from 'react-toastify'
 
-function BlogForm({ onClose, onFormSubmit,fetchBlogPosts }) {
+function BlogForm({ onClose, onFormSubmit, fetchBlogPosts }) {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [category, setCategory] = useState('')
-    
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        const formData = { title, content, category }
-        axios.post('http://localhost:5000/api/blog-posts',formData)
-        .then((response)=>{
-            console.log(response)
-            console.log('Blog post added successfully:', response.data);
-        })
-        .catch((error)=>{
-            console.error('Error adding blog post',error)
-        })
+
+        if (validateForm()) {
+
+            const formData = { title, content, category }
+            axios.post('http://localhost:5000/api/blog-posts', formData)
+                .then((response) => {
+                    console.log(response)
+                    console.log('Blog post added successfully:', response.data);
+                })
+                .catch((error) => {
+                    console.error('Error adding blog post', error)
+                })
 
 
-        onFormSubmit(formData)
-        fetchBlogPosts();
-        console.log("Hii")
-        onClose()
+            onFormSubmit(formData)
+            fetchBlogPosts();
+            onClose()
+        }
+    }
+    const validateForm = () => {
+        if (title.trim().length === 0 || content.trim().length === 0) {
+            toast.error("Title and Content are Required")
+            return false
+        }
+        if (title.trim().length < 5) {
+            toast.error("Title should be at least 5 characters");
+            return false;
+        }
+        if (content.trim().length < 10) {
+            toast.error("Content should be at least 10 characters");
+            return false;
+        }
+
+        if (/^\d/.test(content.trim())) {
+            toast.error("Content should not start with a number");
+            return false
+        }
+        if (/\d/.test(title.trim())) {
+            toast.error("Title should not contain numbers");
+            return false;
+        }
+
+        return true;
     }
 
     return (
         <form onSubmit={handleSubmit} className='blog-form'>
+            <ToastContainer />
             <h2>Add A New Blog Post</h2>
 
             <div>

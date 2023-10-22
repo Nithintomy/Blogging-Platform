@@ -5,12 +5,14 @@ import BlogForm from '../../components/Home/BlogForm/BlogForm';
 import axios from 'axios'
 import './Home.css';
 import '../Blog/Spinner.css'
-import { SpinnerInfinity } from 'spinners-react';
+import { SpinnerRoundOutlined } from 'spinners-react';
+
 
 function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [blogs, setBlogs] = useState([])
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     fetchBlogPosts();
@@ -22,7 +24,9 @@ function Home() {
     axios
       .get('http://localhost:5000/api/posts')
       .then((response) => {
-        setBlogs(response.data);
+
+        const sortedBlogs = response.data.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        setBlogs(sortedBlogs);
       })
       .catch((error) => {
         console.error('Error while fetching the blog Data', error);
@@ -41,6 +45,7 @@ function Home() {
 
   return (
     <div>
+     
       {isModalOpen && (
         <BlogForm
           onClose={closeModal}
@@ -58,10 +63,11 @@ function Home() {
       <div className="add-blog-button-container">
         <button className="add-blog-button" onClick={openModal}> Add Blog</button>
       </div>
+
       {/* Blog list */}
       {loading ? (
         <div className="spinner-container">
-          <SpinnerInfinity size={400} thickness={100} speed={100} color="#36ad47" secondaryColor="rgba(0, 0, 0, 0.44)" />
+          <SpinnerRoundOutlined size={200} thickness={100} speed={100} color="#36ad47" secondarycolor="rgba(0, 0, 0, 0.44)" />
         </div>
       ) : (
         <div className="blog-list-container">

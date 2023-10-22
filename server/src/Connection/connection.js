@@ -1,12 +1,17 @@
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 
-const connectDB = mongoose.connect("mongodb://127.0.0.1:27017/BlogApp")
-.then(()=>{
-    console.log("MongoDb Connected")
-})
-.catch((err)=>{
-    console.error(err)
-})
+const connectDB = mongoose.connect(process.env.ATLAS_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }) 
+  .then(() => console.log("MongoDB Connected ")) 
+  .catch((error) => {
+    console.log("MongoDb Failed ",error.message);
+  });
 
-export default connectDB;
+
+export default connectDB; 

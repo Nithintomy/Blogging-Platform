@@ -7,22 +7,22 @@ function Navbar() {
     <nav>
       <ul>
         <li>
-          <NavLink exact to="/" activeClassName="active">
+          <NavLink exact={true.toString()} to="/" activeclassname="active">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/tech" activeClassName="active">
+          <NavLink to="/tech" activeclassname="active">
             Tech
           </NavLink>
         </li>
         <li>
-          <NavLink to="/travel" activeClassName="active">
+          <NavLink to="/travel" activeclassname="active">
             Travel
           </NavLink>
         </li>
         <li>
-          <NavLink to="/food" activeClassName="active">
+          <NavLink to="/food" activeclassname="active">
             Food
           </NavLink>
         </li>

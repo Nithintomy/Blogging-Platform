@@ -6,6 +6,8 @@ import BlogList from './components/Home/BlogList/BlogList';
 import Navbar from './components/Common/Navbar/Navbar';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
 
@@ -31,7 +33,7 @@ useEffect(() => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/:id" element={<Blog />} />
-        <Route path="/tech" element={<BlogList blogs={blogList} category="Development" />} />
+        <Route path="/tech" element={<BlogList blogs={blogList} category="Tech" />} />
         <Route path="/travel" element={<BlogList blogs={blogList} category="Travel" />} />
         <Route path="/food" element={<BlogList blogs={blogList} category="Food" />} />
 

@@ -1,16 +1,16 @@
 import express from 'express'
-import './src/Connection/connection.js'
+import  './src/Connection/connection.js'
 import cors from 'cors'
 import blogRoutes from './src/Routes/blogRoutes.js';
+import dotenv from'dotenv'
 
 
-
+dotenv.config();
 
 const app =express()
 
 
 const PORT = process.env.PORT || 5000;
-
 
 app.use(cors())
 app.use(express.json())

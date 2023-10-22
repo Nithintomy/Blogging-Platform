@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import './CommentForm.css'
 import axios from 'axios';
 
-function CommentForm({ onCommentSubmit,blogId }) {
+function CommentForm({ blogId,updateComments }) {
 
     const [newCommenter, setCommenter] = useState('')
     const [comment, setComment] = useState('')
@@ -11,8 +11,14 @@ function CommentForm({ onCommentSubmit,blogId }) {
     const handleCommentSubmit = (e) => {
         e.preventDefault();
         if (!newCommenter || !comment) {
-            toast.error("Both are Required")
-        }
+            toast.error("Both fields are required");
+            return;
+          }
+        
+          if (comment.length < 5) {
+            toast.error("Comment must be at least 5 characters long");
+            return;
+          }
 
         const newCommentData = {
             commenter: newCommenter,
@@ -23,7 +29,8 @@ function CommentForm({ onCommentSubmit,blogId }) {
         axios.post(`http://localhost:5000/api/posts/${blogId}/comments`,newCommentData)
         .then((response)=>{
             console.log(response,"comment")
-            onCommentSubmit(response.data)
+            updateComments((prevComments)=>[...prevComments,response.data])
+            toast.success("Comment Added Successfully")
         })
         .catch((error)=>{
             console.error('Error',error)

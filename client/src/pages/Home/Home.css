@@ -1,3 +1,26 @@
 .blog-list-container {
     margin-top: 5%; 
   }
+
+.add-blog-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+
+.add-blog-button {
+  display: inline-block;
+  padding: 15px 125px;
+  background-color: #d1df10ef; 
+  color: black; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.add-blog-button:hover {
+  background-color: #a0a55fef; 
+}

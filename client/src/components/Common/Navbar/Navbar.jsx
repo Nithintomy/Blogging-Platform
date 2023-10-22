@@ -1,23 +1,30 @@
-// Navbar.js
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css'; 
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
+
 function Navbar() {
   return (
     <nav>
-
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink exact to="/" activeClassName="active">
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/tech">Tech</Link>
+          <NavLink to="/tech" activeClassName="active">
+            Tech
+          </NavLink>
         </li>
         <li>
-          <Link to="/travel">Travel</Link>
+          <NavLink to="/travel" activeClassName="active">
+            Travel
+          </NavLink>
         </li>
         <li>
-          <Link to="/food">Food</Link>
+          <NavLink to="/food" activeClassName="active">
+            Food
+          </NavLink>
         </li>
       </ul>
     </nav>

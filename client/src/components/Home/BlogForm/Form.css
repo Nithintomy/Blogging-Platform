@@ -1,0 +1,69 @@
+/* styles.css */
+
+.blog-form {
+  position: fixed;
+  background: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%; 
+  max-width: 600px; 
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; 
+}
+
+.blog-form h2 {
+  font-size: 24px;
+  margin: 0 0 20px;
+  color: #333;
+}
+
+.blog-form label {
+  display: block;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.blog-form input,
+.blog-form textarea,
+.blog-form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.blog-form select {
+  height: 40px;
+}
+
+.blog-form button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #FF5733, #FFCC33); 
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.blog-form button:hover {
+  background: linear-gradient(90deg, #ff8165, #e7b00b); /* Define your gradient colors */
+}
+
+.blog-form button + button {
+  margin-left: 10px;
+  background: #ccc;
+}
+
+.blog-form button + button:hover {
+  background: #999;
+}

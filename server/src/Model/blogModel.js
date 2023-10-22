@@ -5,10 +5,18 @@ import mongoose from "mongoose";
 const blogPostSchema = new mongoose.Schema({
     title:String,
     content:String,
+    category:{
+        type:String,
+        enum:["Tech","Travel","Food"]
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now 
+    },
     comments:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'Comment'
-    } ]
+        ref:'comment'
+    } ] 
 })
 
 const BlogPost =mongoose.model('BlogPost',blogPostSchema)

@@ -1,0 +1,42 @@
+.comments {
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+  }
+  
+  .comments h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .comments ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .comments li {
+    margin-bottom: 20px;
+    border: 2px solid #000000;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .comments li p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .comments li p:first-child {
+    font-weight: bold;
+  }
+  
+  .no-comments {
+    text-align: center;
+   
+  }
+
+  .no-comments h5{
+    margin-bottom: 20%; 
+  }
+  

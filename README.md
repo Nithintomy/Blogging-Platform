@@ -65,17 +65,17 @@ Welcome to the Blogging Platform Project! This project is a full-stack web appli
 
 ### Getting Started with the Back-end
 
-1. Navigate to the back-end directory:
+1.  Navigate to the back-end directory:
+       
+        cd server
 
-     cd server
+2.  Install dependencies:
 
-2. Install dependencies:
+        npm install
 
-     npm install
+3.  Start the server:
 
-3. Start the server:
-
-     npm start
+        npm start
 
 
 ### The back-end is configuared at http://localhost:5000/

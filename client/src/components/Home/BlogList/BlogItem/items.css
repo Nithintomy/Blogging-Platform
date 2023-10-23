@@ -22,9 +22,10 @@
 
 .blogItem-desc::before{
     position: absolute;
-    content: '.....'; 
+    content: '....'; 
     bottom: 0;
     right: 0;
+    font-weight: bold;
 
 }
 .blogItem-link{

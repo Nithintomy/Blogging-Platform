@@ -20,7 +20,6 @@ function Home() {
 
 
   const fetchBlogPosts = () => {
-    console.log("reached");
     axios
       .get('http://localhost:5000/api/posts')
       .then((response) => {

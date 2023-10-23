@@ -37,7 +37,7 @@ Welcome to the Blogging Platform Project! This project is a full-stack web appli
 
         npm run dev
 
-###  The front-end will be accessible at http://127.0.0.1:5173/
+###  The front-end will be accessible at http://localhost:5173/
 
 
 ## Back-end
@@ -78,4 +78,4 @@ Welcome to the Blogging Platform Project! This project is a full-stack web appli
      npm start
 
 
-### The back-end will be accessible at http://localhost:5000/. 
+### The back-end is configuared at http://localhost:5000/

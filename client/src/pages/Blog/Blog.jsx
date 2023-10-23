@@ -52,7 +52,7 @@ function Blog() {
 
   return (
     <div>
-      <ToastContainer/>
+      
       <Link className='back-button' to='/'><span>&#8592;</span>Back</Link>
 
       {loading ? ( 

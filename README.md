@@ -29,11 +29,11 @@ Welcome to the Blogging Platform Project! This project is a full-stack web appli
 
         cd client
 
-    1. Install dependencies:
+2. Install dependencies:
 
         npm install
 
-    2. Start the development server:
+3. Start the development server:
 
         npm run dev
 
@@ -65,15 +65,15 @@ Welcome to the Blogging Platform Project! This project is a full-stack web appli
 
 ### Getting Started with the Back-end
 
-2. Navigate to the back-end directory:
+1. Navigate to the back-end directory:
 
      cd server
 
-    1. Install dependencies:
+2. Install dependencies:
 
      npm install
 
-    2. Start the server:
+3. Start the server:
 
      npm start
 
